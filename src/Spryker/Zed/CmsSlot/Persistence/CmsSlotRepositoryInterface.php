@@ -13,18 +13,8 @@ use Generated\Shared\Transfer\CmsSlotTransfer;
 
 interface CmsSlotRepositoryInterface
 {
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer|null
-     */
     public function findCmsSlotById(int $idCmsSlot): ?CmsSlotTransfer;
 
-    /**
-     * @param int $idCmsSlotTemplate
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTemplateTransfer|null
-     */
     public function findCmsSlotTemplateById(int $idCmsSlotTemplate): ?CmsSlotTemplateTransfer;
 
     /**

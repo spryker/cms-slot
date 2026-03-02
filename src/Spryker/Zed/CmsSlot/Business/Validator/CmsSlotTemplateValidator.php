@@ -24,10 +24,6 @@ class CmsSlotTemplateValidator extends AbstractTransferValidator implements CmsS
      */
     protected $constraintsProvider;
 
-    /**
-     * @param \Spryker\Zed\CmsSlot\Dependency\External\CmsSlotToSymfonyValidatorAdapterInterface $validatorAdapter
-     * @param \Spryker\Zed\CmsSlot\Business\ConstraintsProvider\ConstraintsProviderInterface $constraintsProvider
-     */
     public function __construct(
         CmsSlotToSymfonyValidatorAdapterInterface $validatorAdapter,
         ConstraintsProviderInterface $constraintsProvider
@@ -36,11 +32,6 @@ class CmsSlotTemplateValidator extends AbstractTransferValidator implements CmsS
         $this->constraintsProvider = $constraintsProvider;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotTemplateTransfer $cmsSlotTemplateTransfer
-     *
-     * @return \Generated\Shared\Transfer\ValidationResponseTransfer
-     */
     public function validateCmsSlotTemplate(CmsSlotTemplateTransfer $cmsSlotTemplateTransfer): ValidationResponseTransfer
     {
         return $this->validate($cmsSlotTemplateTransfer, $this->validatorAdapter, $this->constraintsProvider);

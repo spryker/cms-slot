@@ -24,21 +24,12 @@ class CmsSlotActivator implements CmsSlotActivatorInterface
      */
     protected $cmsSlotEntityManager;
 
-    /**
-     * @param \Spryker\Zed\CmsSlot\Persistence\CmsSlotRepositoryInterface $cmsSlotRepository
-     * @param \Spryker\Zed\CmsSlot\Persistence\CmsSlotEntityManagerInterface $cmsSlotEntityManager
-     */
     public function __construct(CmsSlotRepositoryInterface $cmsSlotRepository, CmsSlotEntityManagerInterface $cmsSlotEntityManager)
     {
         $this->cmsSlotRepository = $cmsSlotRepository;
         $this->cmsSlotEntityManager = $cmsSlotEntityManager;
     }
 
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return void
-     */
     public function activateByIdCmsSlot(int $idCmsSlot): void
     {
         $cmsSlotTransfer = $this->getCmsSlotById($idCmsSlot);
@@ -48,11 +39,6 @@ class CmsSlotActivator implements CmsSlotActivatorInterface
         $this->cmsSlotEntityManager->updateCmsSlot($cmsSlotTransfer);
     }
 
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return void
-     */
     public function deactivateByIdCmsSlot(int $idCmsSlot): void
     {
         $cmsSlotTransfer = $this->getCmsSlotById($idCmsSlot);

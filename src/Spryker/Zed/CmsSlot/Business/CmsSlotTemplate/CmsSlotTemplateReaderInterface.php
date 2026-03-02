@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CmsSlotTemplateTransfer;
 
 interface CmsSlotTemplateReaderInterface
 {
-    /**
-     * @param int $idCmsSlotTemplate
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTemplateTransfer
-     */
     public function getTemplateById(int $idCmsSlotTemplate): CmsSlotTemplateTransfer;
 }

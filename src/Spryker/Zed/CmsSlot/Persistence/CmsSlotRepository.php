@@ -19,11 +19,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class CmsSlotRepository extends AbstractRepository implements CmsSlotRepositoryInterface
 {
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer|null
-     */
     public function findCmsSlotById(int $idCmsSlot): ?CmsSlotTransfer
     {
         $cmsSlot = $this->getFactory()
@@ -39,11 +34,6 @@ class CmsSlotRepository extends AbstractRepository implements CmsSlotRepositoryI
             ->mapCmsSlotEntityToTransfer($cmsSlot);
     }
 
-    /**
-     * @param int $idCmsSlotTemplate
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTemplateTransfer|null
-     */
     public function findCmsSlotTemplateById(int $idCmsSlotTemplate): ?CmsSlotTemplateTransfer
     {
         $cmsSlotTemplateEntity = $this->getFactory()
@@ -82,12 +72,6 @@ class CmsSlotRepository extends AbstractRepository implements CmsSlotRepositoryI
             ->mapCmsSlotEntityCollectionToTransferCollection($cmsSlotEntities);
     }
 
-    /**
-     * @param \Orm\Zed\CmsSlot\Persistence\SpyCmsSlotQuery $cmsSlotQuery
-     * @param \Generated\Shared\Transfer\FilterTransfer|null $filterTransfer
-     *
-     * @return \Orm\Zed\CmsSlot\Persistence\SpyCmsSlotQuery
-     */
     protected function setQueryFilters(
         SpyCmsSlotQuery $cmsSlotQuery,
         ?FilterTransfer $filterTransfer

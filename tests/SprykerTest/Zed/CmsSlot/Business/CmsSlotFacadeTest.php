@@ -44,9 +44,6 @@ class CmsSlotFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotSuccess(): void
     {
         // Arrange
@@ -59,9 +56,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertTrue($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotFailsOnInvalidName(): void
     {
         // Arrange
@@ -76,9 +70,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotFailsOnInvalidDescription(): void
     {
         // Arrange
@@ -93,9 +84,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotFailsOnInvalidKey(): void
     {
         // Arrange
@@ -110,9 +98,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotFailsOnInvalidContentProviderType(): void
     {
         // Arrange
@@ -127,9 +112,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotFailsOnInvalidIsActive(): void
     {
         // Arrange
@@ -144,9 +126,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotTemplateSuccess(): void
     {
         // Arrange
@@ -159,9 +138,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertTrue($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotTemplateFailsOnInvalidName(): void
     {
         // Arrange
@@ -176,9 +152,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotTemplateFailsOnInvalidDescription(): void
     {
         // Arrange
@@ -193,9 +166,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCmsSlotTemplateFailsOnInvalidPath(): void
     {
         // Arrange
@@ -210,9 +180,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($validationResponse->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testActivateByIdCmsSlotSuccess(): void
     {
         // Arrange
@@ -227,9 +194,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertTrue($this->tester->isActiveCmsSlotById($cmsSlotTransfer->getIdCmsSlot()));
     }
 
-    /**
-     * @return void
-     */
     public function testDeactivateByIdCmsSlotSuccess(): void
     {
         // Arrange
@@ -244,9 +208,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertFalse($this->tester->isActiveCmsSlotById($cmsSlotTransfer->getIdCmsSlot()));
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsSlotsByCriteriaReturnsCmsSlotTransfers(): void
     {
         // Arrange
@@ -267,9 +228,6 @@ class CmsSlotFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsSlotsByCriteriaReturnsCmsSlotTransfersWithCorrectData(): void
     {
         // Arrange
@@ -284,9 +242,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertEquals($cmsSlotTransferFromDb, $cmsSlotTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsSlotTemplateByIdIsSuccessful(): void
     {
         //Arrange
@@ -301,9 +256,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertEquals($cmsSlotTemplateTransfer, $foundCmsSlotTemplateTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsSlotTemplateByIdFailsWithException(): void
     {
         // Arrange
@@ -323,9 +275,6 @@ class CmsSlotFacadeTest extends Unit
         $cmsSlotFacade->getCmsSlotTemplateById(0);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCmsSlotByIdReturnsTransferWithCorrectDataIfSlotExists(): void
     {
         // Arrange
@@ -338,9 +287,6 @@ class CmsSlotFacadeTest extends Unit
         $this->assertEquals($cmsSlotTransfer, $cmsSlotTransferFromDb);
     }
 
-    /**
-     * @return void
-     */
     public function testFindCmsSlotByIdFailsWithException(): void
     {
         // Arrange

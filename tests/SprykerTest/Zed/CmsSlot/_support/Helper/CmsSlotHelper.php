@@ -25,11 +25,6 @@ class CmsSlotHelper extends Module
     use DataCleanupHelperTrait;
     use LocatorHelperTrait;
 
-    /**
-     * @param array $override
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function haveCmsSlot(array $override = []): CmsSlotTransfer
     {
         $cmsSlotData = [
@@ -45,11 +40,6 @@ class CmsSlotHelper extends Module
         return $cmsSlotTransfer;
     }
 
-    /**
-     * @param array $override
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTemplateTransfer
-     */
     public function haveCmsSlotTemplate(array $override = []): CmsSlotTemplateTransfer
     {
         $cmsSlotTemplateData = [
@@ -63,11 +53,6 @@ class CmsSlotHelper extends Module
         return $cmsSlotTemplateTransfer;
     }
 
-    /**
-     * @param array $override
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function haveCmsSlotInDb(array $override = []): CmsSlotTransfer
     {
         $cmsSlotTransfer = $this->haveCmsSlot($override);
@@ -85,11 +70,6 @@ class CmsSlotHelper extends Module
         return $cmsSlotTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotTransfer $cmsSlotTransfer
-     *
-     * @return void
-     */
     protected function cleanupCmsSlot(CmsSlotTransfer $cmsSlotTransfer): void
     {
         $this->debug(sprintf('Deleting CMS Slot: %d', $cmsSlotTransfer->getIdCmsSlot()));
@@ -98,11 +78,6 @@ class CmsSlotHelper extends Module
             ->delete();
     }
 
-    /**
-     * @param array $override
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTemplateTransfer
-     */
     public function haveCmsSlotTemplateInDb(array $override = []): CmsSlotTemplateTransfer
     {
         $cmsSlotTemplateTransfer = $this->haveCmsSlotTemplate($override);
@@ -121,11 +96,6 @@ class CmsSlotHelper extends Module
         return $cmsSlotTemplateTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotTemplateTransfer $cmsSlotTemplateTransfer
-     *
-     * @return void
-     */
     protected function cleanupCmsSlotTemplate(CmsSlotTemplateTransfer $cmsSlotTemplateTransfer): void
     {
         $this->debug(sprintf('Deleting CMS Slot Template: %d', $cmsSlotTemplateTransfer->getIdCmsSlotTemplate()));
@@ -135,11 +105,6 @@ class CmsSlotHelper extends Module
             ->delete();
     }
 
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return bool
-     */
     public function isActiveCmsSlotById(int $idCmsSlot): bool
     {
         $cmsSlotEntity = SpyCmsSlotQuery::create()->findOneByIdCmsSlot($idCmsSlot);
@@ -151,43 +116,28 @@ class CmsSlotHelper extends Module
         return $cmsSlotEntity->getIsActive();
     }
 
-    /**
-     * @return \Orm\Zed\CmsSlot\Persistence\SpyCmsSlotQuery
-     */
     protected function getCmsSlotQuery(): SpyCmsSlotQuery
     {
         return SpyCmsSlotQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\CmsSlot\Persistence\SpyCmsSlotTemplateQuery
-     */
     protected function getCmsSlotTemplateQuery(): SpyCmsSlotTemplateQuery
     {
         return SpyCmsSlotTemplateQuery::create();
     }
 
-    /**
-     * @return void
-     */
     public function ensureCmsSlotTableIsEmpty(): void
     {
         $this->getCmsSlotToCmsSlotTemplateQuery()->deleteAll();
         $this->getCmsSlotQuery()->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function ensureCmsSlotTemplateTableIsEmpty(): void
     {
         $this->getCmsSlotToCmsSlotTemplateQuery()->deleteAll();
         $this->getCmsSlotTemplateQuery()->deleteAll();
     }
 
-    /**
-     * @return \Orm\Zed\CmsSlot\Persistence\SpyCmsSlotToCmsSlotTemplateQuery
-     */
     protected function getCmsSlotToCmsSlotTemplateQuery(): SpyCmsSlotToCmsSlotTemplateQuery
     {
         return SpyCmsSlotToCmsSlotTemplateQuery::create();

@@ -21,11 +21,6 @@ class CmsSlotDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const CMS_SLOT_VALIDATOR = 'CMS_SLOT_VALIDATOR';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = $this->addValidatorAdapter($container);
@@ -33,11 +28,6 @@ class CmsSlotDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addValidatorAdapter(Container $container): Container
     {
         $container->set(static::CMS_SLOT_VALIDATOR, function () {

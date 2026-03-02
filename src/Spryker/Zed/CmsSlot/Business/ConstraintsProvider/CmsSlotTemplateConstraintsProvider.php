@@ -14,9 +14,6 @@ use Symfony\Component\Validator\Constraints\Regex;
 
 class CmsSlotTemplateConstraintsProvider implements ConstraintsProviderInterface
 {
-    /**
-     * @return array
-     */
     public function getConstraintsMap(): array
     {
         return [

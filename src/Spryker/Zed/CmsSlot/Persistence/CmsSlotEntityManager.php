@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class CmsSlotEntityManager extends AbstractEntityManager implements CmsSlotEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotTransfer $cmsSlotTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function updateCmsSlot(CmsSlotTransfer $cmsSlotTransfer): CmsSlotTransfer
     {
         $cmsSlotTransfer->requireIdCmsSlot();

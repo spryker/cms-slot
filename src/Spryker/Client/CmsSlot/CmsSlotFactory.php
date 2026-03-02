@@ -13,9 +13,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class CmsSlotFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\CmsSlot\Business\CmsSlotDataProviderInterface
-     */
     public function createCmsSlotDataProvider(): CmsSlotDataProviderInterface
     {
         return new CmsSlotDataProvider($this->getExternalDataProviderStrategyPlugins());

@@ -19,25 +19,16 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class CmsSlotPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\CmsSlot\Persistence\SpyCmsSlotQuery
-     */
     public function createCmsSlotQuery(): SpyCmsSlotQuery
     {
         return SpyCmsSlotQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\CmsSlot\Persistence\SpyCmsSlotTemplateQuery
-     */
     public function createCmsSlotTemplateQuery(): SpyCmsSlotTemplateQuery
     {
         return SpyCmsSlotTemplateQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Persistence\Propel\Mapper\CmsSlotMapper
-     */
     public function createCmsSlotMapper(): CmsSlotMapper
     {
         return new CmsSlotMapper();

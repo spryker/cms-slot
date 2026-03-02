@@ -15,9 +15,6 @@ use Symfony\Component\Validator\Constraints\Type;
 
 class CmsSlotConstraintsProvider implements ConstraintsProviderInterface
 {
-    /**
-     * @return array
-     */
     public function getConstraintsMap(): array
     {
         return [

@@ -31,9 +31,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CmsSlotBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CmsSlot\Business\Validator\CmsSlotValidatorInterface
-     */
     public function createCmsSlotValidator(): CmsSlotValidatorInterface
     {
         return new CmsSlotValidator(
@@ -42,9 +39,6 @@ class CmsSlotBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Business\Validator\CmsSlotTemplateValidatorInterface
-     */
     public function createCmsSlotTemplateValidator(): CmsSlotTemplateValidatorInterface
     {
         return new CmsSlotTemplateValidator(
@@ -53,17 +47,11 @@ class CmsSlotBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Business\ConstraintsProvider\ConstraintsProviderInterface
-     */
     public function createCmsSlotConstraintsProvider(): ConstraintsProviderInterface
     {
         return new CmsSlotConstraintsProvider();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Business\Activator\CmsSlotActivatorInterface
-     */
     public function createCmsSlotActivator(): CmsSlotActivatorInterface
     {
         return new CmsSlotActivator(
@@ -72,33 +60,21 @@ class CmsSlotBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Business\CmsSlot\CmsSlotReaderInterface
-     */
     public function createCmsSlotReader(): CmsSlotReaderInterface
     {
         return new CmsSlotReader($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Business\CmsSlotTemplate\CmsSlotTemplateReaderInterface
-     */
     public function createCmsSlotTemplateReader(): CmsSlotTemplateReaderInterface
     {
         return new CmsSlotTemplateReader($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Business\ConstraintsProvider\ConstraintsProviderInterface
-     */
     public function createCmsSlotTemplateConstraintsProvider(): ConstraintsProviderInterface
     {
         return new CmsSlotTemplateConstraintsProvider();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlot\Dependency\External\CmsSlotToSymfonyValidatorAdapterInterface
-     */
     public function getValidatorAdapter(): CmsSlotToSymfonyValidatorAdapterInterface
     {
         return $this->getProvidedDependency(CmsSlotDependencyProvider::CMS_SLOT_VALIDATOR);

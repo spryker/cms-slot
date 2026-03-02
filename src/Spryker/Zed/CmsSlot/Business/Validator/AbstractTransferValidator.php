@@ -17,13 +17,6 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 abstract class AbstractTransferValidator
 {
-    /**
-     * @param \Spryker\Shared\Kernel\Transfer\AbstractTransfer $transfer
-     * @param \Spryker\Zed\CmsSlot\Dependency\External\CmsSlotToSymfonyValidatorAdapterInterface $validatorAdapter
-     * @param \Spryker\Zed\CmsSlot\Business\ConstraintsProvider\ConstraintsProviderInterface $constraintsProvider
-     *
-     * @return \Generated\Shared\Transfer\ValidationResponseTransfer
-     */
     protected function validate(
         AbstractTransfer $transfer,
         CmsSlotToSymfonyValidatorAdapterInterface $validatorAdapter,
@@ -50,12 +43,6 @@ abstract class AbstractTransferValidator
         return $validationResponseTransfer->setIsSuccess($isSuccess);
     }
 
-    /**
-     * @param string $propertyName
-     * @param \Symfony\Component\Validator\ConstraintViolationListInterface $violations
-     *
-     * @return \Generated\Shared\Transfer\ConstraintViolationTransfer
-     */
     protected function getConstraintViolationTransfer(
         string $propertyName,
         ConstraintViolationListInterface $violations

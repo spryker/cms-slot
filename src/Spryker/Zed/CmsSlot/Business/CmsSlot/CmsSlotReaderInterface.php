@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CmsSlotTransfer;
 
 interface CmsSlotReaderInterface
 {
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function getCmsSlotById(int $idCmsSlot): CmsSlotTransfer;
 }

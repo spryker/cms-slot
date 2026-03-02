@@ -9,8 +9,5 @@ namespace Spryker\Zed\CmsSlot\Business\ConstraintsProvider;
 
 interface ConstraintsProviderInterface
 {
-    /**
-     * @return array
-     */
     public function getConstraintsMap(): array;
 }

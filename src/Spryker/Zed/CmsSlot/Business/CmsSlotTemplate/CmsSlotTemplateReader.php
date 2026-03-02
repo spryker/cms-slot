@@ -18,9 +18,6 @@ class CmsSlotTemplateReader implements CmsSlotTemplateReaderInterface
      */
     protected $cmsSlotRepository;
 
-    /**
-     * @param \Spryker\Zed\CmsSlot\Persistence\CmsSlotRepositoryInterface $cmsSlotRepository
-     */
     public function __construct(CmsSlotRepositoryInterface $cmsSlotRepository)
     {
         $this->cmsSlotRepository = $cmsSlotRepository;

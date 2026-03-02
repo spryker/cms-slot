@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CmsSlotTransfer;
 
 interface CmsSlotEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotTransfer $cmsSlotTransfer
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function updateCmsSlot(CmsSlotTransfer $cmsSlotTransfer): CmsSlotTransfer;
 }

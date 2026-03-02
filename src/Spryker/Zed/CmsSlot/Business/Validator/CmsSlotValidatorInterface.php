@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ValidationResponseTransfer;
 
 interface CmsSlotValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotTransfer $cmsSlotTransfer
-     *
-     * @return \Generated\Shared\Transfer\ValidationResponseTransfer
-     */
     public function validateCmsSlot(CmsSlotTransfer $cmsSlotTransfer): ValidationResponseTransfer;
 }

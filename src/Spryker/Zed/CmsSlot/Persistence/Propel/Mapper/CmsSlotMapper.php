@@ -15,22 +15,11 @@ use Propel\Runtime\Collection\Collection;
 
 class CmsSlotMapper
 {
-    /**
-     * @param \Orm\Zed\CmsSlot\Persistence\SpyCmsSlot $cmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function mapCmsSlotEntityToTransfer(SpyCmsSlot $cmsSlot): CmsSlotTransfer
     {
         return (new CmsSlotTransfer())->fromArray($cmsSlot->toArray(), true);
     }
 
-    /**
-     * @param \Orm\Zed\CmsSlot\Persistence\SpyCmsSlot $cmsSlot
-     * @param \Generated\Shared\Transfer\CmsSlotTransfer $cmsSlotTransfer
-     *
-     * @return \Orm\Zed\CmsSlot\Persistence\SpyCmsSlot
-     */
     public function mapCmsSlotTransferToEntity(SpyCmsSlot $cmsSlot, CmsSlotTransfer $cmsSlotTransfer): SpyCmsSlot
     {
         $cmsSlot->fromArray($cmsSlotTransfer->toArray());
